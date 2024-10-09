@@ -1,38 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  background-color: #0d0d0d;
+  color: #ffffff;
+}
+
 .App {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
   text-align: center;
+  background-color: #0d0d0d;
+  padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.welcome-container {
+  animation: fadeIn 1.2s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.welcome-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+.link-input, .file-input {
+  width: 100%;
+  max-width: 450px;
+  padding: 15px;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  border: 2px solid #1db954;
+  outline: none;
+  background-color: #1a1a1a;
+  color: #fff;
+  transition: border-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.link-input:focus, .file-input:focus {
+  border-color: #1db954;
+}
+
+.load-button {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 25px;
+  background: linear-gradient(135deg, #1db954, #14833b);
+  color: white;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
+}
+
+.load-button:hover {
+  box-shadow: 0 10px 20px rgba(29, 185, 84, 0.5);
+}
+
+.file-input {
+  margin-top: 1rem;
+  padding: 15px;
+  border: none;
+  background-color: #1a1a1a;
+  color: #fff;
+  font-size: 1.1rem;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
+.file-input::file-selector-button {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #1db954, #14833b);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.file-input::file-selector-button:hover {
+  background-color: #14833b;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.fullscreen-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #1db954;
+  color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  z-index: 100;
+  transition: background-color 0.3s ease;
+}
+
+.fullscreen-button:hover {
+  background-color: #14833b;
+}
+/* Existing styles remain unchanged */
+
+/* Media Player Styles */
+.media-player {
+  position: absolute;
+  bottom: 20px;
+  width: 90%;
+  left: 5%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #fff;
+  z-index: 100;
+}
+
+.controls {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 10px;
+}
+
+.media-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  margin: 0 15px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+/* Signature Styling */
+.signature {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  font-size: 0.9rem;
+  color: #777;
+  letter-spacing: 1px;
+  font-style: italic;
+}
+
+.coast-signature {
+  color: #1db954;
+  font-weight: bold;
+  font-style: normal;
+}
+.app-name {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  color: #1db954;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.tagline {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.media-button:hover {
+  color: #1db954;
+}
+
+.time-info {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.time-info span {
+  margin: 0 10px;
+  font-size: 1rem;
+}
+
+.scrubber {
+  flex: 1;
+  -webkit-appearance: none;
+  height: 5px;
+  background: #1a1a1a;
+  border-radius: 5px;
+  outline: none;
+}
+
+.scrubber::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 15px;
+  height: 15px;
+  background: #1db954;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.scrubber::-moz-range-thumb {
+  width: 15px;
+  height: 15px;
+  background: #1db954;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+.back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  background-color: #1db954;
   color: white;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  z-index: 100;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.back-button:hover {
+  background-color: #14833b;
 }

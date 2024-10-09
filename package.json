@@ -19,6 +19,9 @@
     "react-youtube": "^10.1.0",
     "ytdl-core": "^4.11.5"
   },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.16.7"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

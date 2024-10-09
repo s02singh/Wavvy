@@ -273,8 +273,7 @@ export default function Visualizer({ audioFile, onBack }) {
       const mappedAmplitude = p5.map(amplitude, 0, 255, 0, radius);
       const angle = angleStep * i;
 
-      const x = Math.cos(angle) * (radius + mappedAmplitude);
-      const y = Math.sin(angle) * (radius + mappedAmplitude);
+  
       const z = -500;
 
       p5.push();

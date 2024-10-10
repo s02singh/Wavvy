@@ -1,3 +1,4 @@
+// App.jsx
 import React, { useState } from 'react';
 import './App.css';
 import Visualizer from './Visualizer';

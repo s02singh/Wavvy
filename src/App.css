@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -30,72 +31,75 @@ html, body {
   font-size: 3rem;
   margin-bottom: 2rem;
   color: #ffffff;
-  opacity: 0.9;
+  opacity: 0.95;
 }
 
 .link-input, .file-input {
   width: 100%;
-  max-width: 450px;
-  padding: 15px;
-  font-size: 1.1rem;
-  border-radius: 25px;
+  max-width: 500px; /* Increased max-width for better input fields */
+  padding: 15px 20px; /* Increased padding for better usability */
+  font-size: 1.2rem; /* Increased font size for readability */
+  border-radius: 30px; /* More rounded corners for a modern look */
   border: 2px solid #1db954;
   outline: none;
   background-color: #1a1a1a;
   color: #fff;
-  transition: border-color 0.3s ease;
-  margin-bottom: 20px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 25px; /* Increased margin for better spacing */
 }
 
 .link-input:focus, .file-input:focus {
-  border-color: #1db954;
+  border-color: #1ed760;
+  box-shadow: 0 0 10px rgba(30, 215, 96, 0.5);
 }
 
 .load-button {
-  margin-top: 20px;
-  padding: 15px 30px;
-  font-size: 1.1rem;
+  margin-top: 25px; /* Increased margin for better spacing */
+  padding: 20px 40px; /* Increased padding for better click area */
+  font-size: 1.2rem; /* Increased font size for better readability */
   border: none;
-  border-radius: 25px;
+  border-radius: 30px; /* More rounded corners */
   background: linear-gradient(135deg, #1db954, #14833b);
   color: white;
   cursor: pointer;
-  transition: box-shadow 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
 .load-button:hover {
-  box-shadow: 0 10px 20px rgba(29, 185, 84, 0.5);
+  box-shadow: 0 15px 30px rgba(29, 185, 84, 0.5);
+  transform: translateY(-3px);
 }
 
 .file-input {
-  margin-top: 1rem;
-  padding: 15px;
+  margin-top: 1.5rem;
+  padding: 15px 20px;
   border: none;
   background-color: #1a1a1a;
   color: #fff;
-  font-size: 1.1rem;
-  border-radius: 25px;
+  font-size: 1.2rem;
+  border-radius: 30px;
   cursor: pointer;
 }
 
 .file-input::file-selector-button {
-  padding: 10px 20px;
+  padding: 12px 25px;
   background: linear-gradient(135deg, #1db954, #14833b);
   color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 15px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .file-input::file-selector-button:hover {
   background-color: #14833b;
+  transform: scale(1.05);
 }
 
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
   100% {
     opacity: 1;
@@ -103,32 +107,48 @@ html, body {
   }
 }
 
-.fullscreen-button {
+/* Button Styles */
+.back-button,
+.fullscreen-button,
+.export-button {
   position: absolute;
   top: 20px;
-  right: 20px;
-  padding: 10px 20px;
+  padding: 12px 25px; /* Increased padding for better click area */
   background-color: #1db954;
   color: white;
-  font-size: 1.1rem;
+  font-size: 1.2rem; /* Increased font size for better readability */
   border: none;
-  border-radius: 25px;
+  border-radius: 30px; /* More rounded corners */
   cursor: pointer;
   z-index: 100;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.fullscreen-button:hover {
-  background-color: #14833b;
+.back-button {
+  left: 20px;
 }
-/* Existing styles remain unchanged */
+
+.fullscreen-button {
+  right: 80px; /* Adjusted positioning for better layout */
+}
+
+.export-button {
+  right: 20px;
+}
+
+.back-button:hover,
+.fullscreen-button:hover,
+.export-button:hover {
+  background-color: #14833b;
+  transform: scale(1.05);
+}
 
 /* Media Player Styles */
 .media-player {
   position: absolute;
-  bottom: 20px;
-  width: 90%;
-  left: 5%;
+  bottom: 30px; /* Increased bottom spacing */
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -138,25 +158,87 @@ html, body {
 
 .controls {
   display: flex;
-  justify-content: center;
-  margin-bottom: 10px;
+  gap: 25px; /* Increased gap for better spacing */
+  margin-bottom: 15px; /* Increased margin for better spacing */
 }
 
 .media-button {
-  background: none;
+  padding: 12px 25px; /* Increased padding for better click area */
+  background-color: #1db954;
+  color: white;
+  font-size: 1.2rem; /* Increased font size for better readability */
   border: none;
-  color: #fff;
-  font-size: 2rem;
-  margin: 0 15px;
+  border-radius: 20px; /* More rounded corners */
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
+
+.media-button:hover {
+  background-color: #14833b;
+  transform: scale(1.05);
+}
+
+.time-info {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Increased gap for better spacing */
+}
+
+.time-info span {
+  margin: 0 10px;
+  font-size: 1.1rem; /* Increased font size for readability */
+}
+
+.scrubber {
+  flex: 1;
+  -webkit-appearance: none;
+  height: 6px; /* Increased height for better usability */
+  background: #1a1a1a;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.scrubber:hover {
+  background: #333333;
+}
+
+.scrubber::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px; /* Increased thumb size for better usability */
+  height: 18px;
+  background: #1db954;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(29, 185, 84, 0.5);
+  transition: transform 0.2s ease;
+}
+
+.scrubber::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.scrubber::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  background: #1db954;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgba(29, 185, 84, 0.5);
+  transition: transform 0.2s ease;
+}
+
+.scrubber::-moz-range-thumb:hover {
+  transform: scale(1.2);
+}
+
 /* Signature Styling */
 .signature {
   position: absolute;
-  bottom: 10px;
-  right: 20px;
-  font-size: 0.9rem;
+  bottom: 15px;
+  right: 25px;
+  font-size: 1rem;
   color: #777;
   letter-spacing: 1px;
   font-style: italic;
@@ -167,6 +249,7 @@ html, body {
   font-weight: bold;
   font-style: normal;
 }
+
 .app-name {
   font-size: 4rem;
   margin-bottom: 0.5rem;
@@ -176,70 +259,43 @@ html, body {
 }
 
 .tagline {
-  font-size: 1.5rem;
+  font-size: 1.8rem; /* Increased font size for better emphasis */
   color: #ffffff;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
   font-style: italic;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .media-button:hover {
   color: #1db954;
 }
 
-.time-info {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
+@media (max-width: 768px) {
+  .media-player {
+    width: 95%;
+  }
 
-.time-info span {
-  margin: 0 10px;
-  font-size: 1rem;
-}
+  .scrubber {
+    width: 250px;
+  }
 
-.scrubber {
-  flex: 1;
-  -webkit-appearance: none;
-  height: 5px;
-  background: #1a1a1a;
-  border-radius: 5px;
-  outline: none;
-}
+  .back-button,
+  .fullscreen-button,
+  .export-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
 
-.scrubber::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 15px;
-  height: 15px;
-  background: #1db954;
-  border-radius: 50%;
-  cursor: pointer;
-}
+  .media-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+  }
 
-.scrubber::-moz-range-thumb {
-  width: 15px;
-  height: 15px;
-  background: #1db954;
-  border-radius: 50%;
-  cursor: pointer;
-}
+  .app-name {
+    font-size: 3rem;
+  }
 
-
-.back-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  padding: 10px 20px;
-  background-color: #1db954;
-  color: white;
-  font-size: 1.1rem;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  z-index: 100;
-  transition: background-color 0.3s ease;
-}
-
-.back-button:hover {
-  background-color: #14833b;
+  .tagline {
+    font-size: 1.3rem;
+  }
 }
